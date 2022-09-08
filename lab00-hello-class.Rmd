@@ -1,7 +1,7 @@
 ---
 title: "Lab 00 - Hello Class!"
 date: "2016-09-07 (updated `r Sys.Date()` by TL)"
-author: "Tanzy Love"
+author: "Christopher Kirchhoff"
 output: 
   tufte::tufte_html:
     tufte_variant: "envisioned"
@@ -43,8 +43,8 @@ FIGURES REMOVED and directories adjusted.
 ```{r open-a-project-in-the-clone}
 
 #you need to change this to the right repository and location for you and your local machine
-#usethis::create_from_github("https://github.com/bst-urmc/test-assignment-1-tanzylove",
-#   destdir="~/Documents/work/teaching/BST430/", fork=FALSE)
+#usethis::create_from_github("https://github.com/bst-urmc/setup-check-assignment-0-ckirchho.git",
+#   destdir="~/Documents/URochester/BST430/", fork=FALSE)
 
 ```
 
@@ -66,8 +66,8 @@ Before we can get started we need to take care of some required housekeeping. Sp
   ```{r, eval = FALSE}
   usethis::use_git_config(
   scope = "user",
-  user.name = "Tanzy Love",
-  user.email = "Tanzy_Love@urmc.rochester.edu")
+  user.name = "ckirchho",
+  user.email = "christopher_kirchhoff@urmc.rochester.edu")
   ```
 
 -  Next, we need to set up a personal access token so that you can write from rstudio cloud to github. To do this, enter use the following command into the Console:
