@@ -14,7 +14,7 @@ output:
 ---
 
 ```{r include=FALSE}
-library(tidyverse)
+library(tufte)
 library(datasauRus)
 options(
   htmltools.dir.version = FALSE, # for blogdown
@@ -66,7 +66,7 @@ Before we can get started we need to take care of some required housekeeping. Sp
   ```{r, eval = FALSE}
   usethis::use_git_config(
   scope = "user",
-  user.name = "ckirchho",
+  user.name = "Christopher Kirchhoff",
   user.email = "christopher_kirchhoff@urmc.rochester.edu")
   ```
 

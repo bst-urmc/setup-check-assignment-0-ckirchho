@@ -10,7 +10,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="author" content="Tanzy Love" />
+<meta name="author" content="Christopher Kirchhoff" />
 
 
 <title>Lab 00 - Hello Class!</title>
@@ -111,13 +111,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -142,8 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <h1 class="title toc-ignore">Lab 00 - Hello Class!</h1>
-<h4 class="author">Tanzy Love</h4>
-<h4 class="date">2016-09-07 (updated 2022-09-01 by TL)</h4>
+<h4 class="author">Christopher Kirchhoff</h4>
+<h4 class="date">2016-09-07 (updated 2022-09-08 by TL)</h4>
 
 
 
@@ -174,8 +181,8 @@ to copy the repo URL.</p></li>
 <li><p>Go to RStudio clone the assignment repository.</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#you need to change this to the right repository and location for you and your local machine</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#usethis::create_from_github(&quot;https://github.com/bst-urmc/test-assignment-1-tanzylove&quot;,</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   destdir=&quot;~/Documents/work/teaching/BST430/&quot;, fork=FALSE)</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#usethis::create_from_github(&quot;https://github.com/bst-urmc/setup-check-assignment-0-ckirchho.git&quot;,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   destdir=&quot;~/Documents/URochester/BST430/&quot;, fork=FALSE)</span></span></code></pre></div>
 <ul>
 <li>Copy and paste (AM: OK to copy-paste here) the URL of your
 assignment repo into the function</li>
@@ -199,8 +206,8 @@ appropriate and entering it into the Console:</li>
 <p>I put</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">scope =</span> <span class="st">&quot;user&quot;</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">user.name =</span> <span class="st">&quot;Tanzy Love&quot;</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">user.email =</span> <span class="st">&quot;Tanzy_Love@urmc.rochester.edu&quot;</span>)</span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">user.name =</span> <span class="st">&quot;Christopher Kirchhoff&quot;</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">user.email =</span> <span class="st">&quot;christopher_kirchhoff@urmc.rochester.edu&quot;</span>)</span></code></pre></div>
 <ul>
 <li><p>Next, we need to set up a personal access token so that you can
 write from rstudio cloud to github. To do this, enter use the following
