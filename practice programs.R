@@ -1,4 +1,4 @@
-setwd("YOUR INFO HERE")
+setwd("~/Documents/URochester/BST430")
 
 hotdogs=read.table("Hdcalsod.TXT", header=T)
 attach(hotdogs)
